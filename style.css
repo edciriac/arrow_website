@@ -1,0 +1,41 @@
+* {
+    font: larger "Courier new", monospace;
+}
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    ;
+}
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 70vh;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid #33ff00; */
+    /* border-left: 0;
+    border-right: 0; */
+    align-self: center;
+}
+
+a {
+    color: #33ff00;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+:focus {
+    border-bottom: 1.5px solid #33ff00;
+    border-top: 1.5px solid #33ff00;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+}
+
+
