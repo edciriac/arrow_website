@@ -1,0 +1,31 @@
+// Code for using up and down arrow keys to navigate through the links
+const links = document.getElementsByTagName('a')
+let index = 0
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowUp') {
+    index = index== 0? links.length-1: index-1
+    links[index].focus() 
+  } else if (event.key === 'ArrowDown') {
+    index = index== links.length-1? 0: index+1
+    links[index].focus()
+    console.log('Down arrow key pressed');
+  }
+
+  // Code for toggling the cursor
+  if (event.key === 'c') {
+    console.log('c key pressed');
+    let cursorStyle = document.getElementsByTagName("body")[0].style.cursor
+    if (cursorStyle === "none") {
+      document.getElementsByTagName("body")[0].style.cursor = "default"
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.cursor = "default"
+      }
+      
+    } else {
+      document.getElementsByTagName("body")[0].style.cursor = "none"
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.cursor = "none"
+      }
+    }
+  }
+});
