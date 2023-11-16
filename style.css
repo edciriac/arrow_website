@@ -10,6 +10,9 @@ body{
     height: 100vh;
     margin: 0;
 }
+body, a{
+    cursor: none;
+}
 .banner {
     display: flex;
     height: 2em;
@@ -66,8 +69,9 @@ body{
     animation: blink 1s infinite step-end 1s;
 }
 
-body, a{
-    cursor: none;
+footer {
+    font-size: small;
+    margin-bottom: 0.7em;
 }
 
 
