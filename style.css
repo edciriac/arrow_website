@@ -1,6 +1,22 @@
 * {
     font: larger "Courier new", monospace;
 }
+
+* {
+    color: #33ff00;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+:focus {
+    border-bottom: 1.5px solid #33ff00;
+    border-top: 1.5px solid #33ff00;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    animation: blink 1s infinite step-end ;
+}
+
 body{
     background-color: black;
     display: flex;
@@ -9,6 +25,7 @@ body{
     justify-content: space-around;
     height: 100vh;
     margin: 0;
+    /* animation: fade-in 2s ; */
 }
 body, a{
     cursor: none;
@@ -51,22 +68,16 @@ body, a{
     /* border-left: 0;
     border-right: 0; */
     align-self: center;
-    animation: fade-in 2s ;
 }
 
-* {
-    color: #33ff00;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-}
-:focus {
-    border-bottom: 1.5px solid #33ff00;
-    border-top: 1.5px solid #33ff00;
-    border-left: 0;
-    border-right: 0;
-    outline: none;
-    animation: blink 1s infinite step-end 1s;
+.help{
+    /* background-color: gray; */
+    position: absolute;
+    left: 70vw;
+    top: 32.5vh; 
+    font-size: medium;
+    width: 20vw;
+    opacity: 0;
 }
 
 footer {
@@ -81,6 +92,17 @@ footer {
     }
     to {
         opacity: 1;
+    }
+}
+@keyframes show {
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 @keyframes blink {
