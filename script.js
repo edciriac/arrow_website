@@ -1,3 +1,4 @@
+
 // Show tooltip if user doesn't press on arrow keys for 4 seconds
 let isPressed = false
 const showHelp = () => {
