@@ -11,6 +11,7 @@
 }
 .container div {
     border: 1px solid #33ff00;
+    border-radius: 5px;
     height: 25%;
     width: 25%;
     
