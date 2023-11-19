@@ -9,7 +9,7 @@ const showHelp = () => {
 setInterval(showHelp, 3000);
 
 // Code for using up and down arrow keys to navigate through the links
-const links = document.getElementsByTagName('a').length != 0 ? document.getElementsByTagName('a') : document.getElementsByClassName("infobox")
+const links = document.getElementsByClassName("arrow-nav")
 let index = 0
 document.addEventListener('keydown', function(event) {
   if (event.key === 'ArrowUp') {
