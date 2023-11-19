@@ -23,6 +23,26 @@ document.addEventListener('keydown', function(event) {
     isPressed = true
   }
 
+  // Code for handling the dialog box
+  if (event.key === 'Enter') {
+    let focusedDiv = document.querySelector(":focus")
+    let content = focusedDiv.firstElementChild
+    let peekContent = focusedDiv.lastElementChild
+    if (focusedDiv.classList.contains("expanded")) {
+      focusedDiv.classList.remove("expanded")
+      content.setAttribute("class", "hide")
+      peekContent.setAttribute("class", "peek-content")
+    }
+    else {
+      focusedDiv.setAttribute("class", "expanded")
+      content.setAttribute("class", "")
+      peekContent.setAttribute("class", "hide")
+    } 
+  } 
+  // else if (event.key === 'Escape') {
+    
+  // }
+
   // Code for toggling the cursor
   if (event.key === 'c' || event.key === 'C') {
     console.log('c key pressed');
@@ -42,5 +62,7 @@ document.addEventListener('keydown', function(event) {
   }
 
 });
+
+
 
 
