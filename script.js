@@ -11,16 +11,19 @@ setInterval(showHelp, 3000);
 // Code for using up and down arrow keys to navigate through the links
 const links = document.getElementsByClassName("arrow-nav")
 let index = 0
+var expanded = false
 document.addEventListener('keydown', function(event) {
-  if (event.key === 'ArrowUp') {
-    index = index== 0? links.length-1: index-1
-    links[index].focus() 
-    isPressed = true
-  } else if (event.key === 'ArrowDown') {
-    index = index== links.length-1? 0: index+1
-    links[index].focus()
-    console.log('Down arrow key pressed');
-    isPressed = true
+  if (!expanded) {
+    if (event.key === 'ArrowUp') {
+      index = index== 0? links.length-1: index-1
+      links[index].focus() 
+      isPressed = true
+    } else if (event.key === 'ArrowDown') {
+      index = index== links.length-1? 0: index+1
+      links[index].focus()  
+      console.log('Down arrow key pressed');
+      isPressed = true
+    }
   }
 
   // Code for handling the dialog box
@@ -32,11 +35,13 @@ document.addEventListener('keydown', function(event) {
       focusedDiv.classList.remove("expanded")
       content.setAttribute("class", "hide")
       peekContent.setAttribute("class", "peek-content")
+      expanded = false
     }
     else {
       focusedDiv.setAttribute("class", "expanded")
       content.setAttribute("class", "")
       peekContent.setAttribute("class", "hide")
+      expanded = true
     } 
   } 
   // else if (event.key === 'Escape') {
