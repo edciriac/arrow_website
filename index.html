@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Eduard Ciriaco Homepage</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="main">
-            <header id="app-header"></header>
-            <div id="content">
-                <div><a class="arrow-nav" href="experience.html">experience</a></div>
-                <div><a class="arrow-nav" href="education.html" autofocus>education</a></div>
-                <div><a class="arrow-nav" href="skills.html">skills</a></div>
-                <!-- <div><a href="toolkit.html">toolkit</a></div> -->
-                <div class="help">Use 'up' and 'down' arrow keys to navigate and 'enter' to see the page.</div>
-            </div>
-            <footer id="app-footer"></footer>
-    
+
+<head>
+    <title>Eduard Ciriaco Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <header id="app-header"></header>
+        <div id="content">
+            <div><a class="arrow-nav" href="experience.html">experience</a></div>
+            <div><a class="arrow-nav" href="education.html" autofocus>education</a></div>
+            <div><a class="arrow-nav" href="skills.html">skills</a></div>
+            <!-- <div><a href="toolkit.html">toolkit</a></div> -->
+            <div class="help">Use 'up' and 'down' arrow keys to navigate and 'enter' to see the page.</div>
         </div>
-        <script src="script.js"></script>
-        <script async src="header.js"></script>
-    </body>
+        <footer id="app-footer"></footer>
+
+    </div>
+    <script>
+        // Show tooltip if user doesn't press on arrow keys for 4 seconds
+        let isPressed = false
+        const showHelp = () => {
+            if (!isPressed) {
+                document.getElementsByClassName("help")[0].style.animation = "show 5s"
+            }
+        }
+        setInterval(showHelp, 3000);
+    </script>
+    <script src="script.js"></script>
+    <script async src="header.js"></script>
+</body>
+
 </html>
