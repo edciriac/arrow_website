@@ -1,0 +1,7 @@
+.infobox{
+    width: auto;
+}
+.peek-info{
+    display: flex;
+    width: max-content;
+}
