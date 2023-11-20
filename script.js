@@ -56,6 +56,11 @@ document.addEventListener('keydown', function(event) {
     }
   }
 
+  // Code for going back to previous page with backspace
+  if (event.key === 'Backspace' || event.key === 'ArrowLeft') {
+    window.history.back();
+  }
+  
   // Code for toggling the cursor
   if (event.key === 'c' || event.key === 'C') {
     console.log('c key pressed');
