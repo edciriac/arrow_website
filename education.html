@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Education Page</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Education Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="exp.css">
 </head>
+
 <body>
-	<div id="main">
-        <h2 class="subheading">Education</h2>
-        <article>
-            <h2>University of Jyväskylä</h2>
-            <h4>Bachelor of Computer Science</h4>
-            <h3>2020-2023</h3>
-            <ul>
-                <li>The degree consists of programming courses and optional studies of mathematics and statistics.</li>
-                <li>I did an exchange programme In Chile, Universidad Austral de Chile (UACh)</li>
-            </ul>
-        </article>
+    <div id="main">
+        <header id="app-header"></header>
+        <h1>Experience</h1>
+        <div class="container">
+            <div class="infobox arrow-nav" tabindex="0" autofocus>
+                <article class="more-info hide">
+                    <h2>University of Jyväskylä</h2>
+                    <h4>Bachelor of Computer Science</h4>
+                    <h3>2020-2023</h3>
+                    <ul>
+                        <li>Tools used: Svelte.js, TypeScript, Apache ECharts, git </li>
+                        <li>Trainees task was to create a new web UI for the optimization software. My part was to
+                            create different visualization components using ECharts.</li>
+                        <li><a href="https://github.com/industrial-optimization-group/desdeo-webui">Project's GitHub
+                                page</a></li>
+                    </ul>
+                </article>
+                <article class="peek-info">
+                    <h2>University of Jyväskylä</h2>
+                    <h4>Bachelor of Computer Science</h4>
+                    <h3>2020-2023</h3>
+                    <ul>
+                        <li><strong>Main subjects:</strong> programming, algorithms, mathematics and statistics </li>
+                        <li>Exchange program in Universidad Austral de Chile (UACh) in Spanish</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <footer id="app-footer"></footer>
     </div>
-    <footer id="app-footer"></footer>
-    <script src="script.js"></script>
+    <script async src="header.js"></script>
+    <script async src="script.js"></script>
 </body>
+
 </html>

@@ -26,6 +26,11 @@ h4{
     text-align: left;
 }
 
+strong{
+    font-size: small;
+    font-weight: bold;
+}
+
 ul{
     margin: 0;
     font-size: 0.2em;
@@ -107,8 +112,4 @@ body{
 
 .hide{
     display: none;
-}
-
-* {
-    cursor: pointer;
 }
