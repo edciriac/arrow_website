@@ -44,9 +44,17 @@ document.addEventListener('keydown', function(event) {
       expanded = true
     } 
   } 
-  // else if (event.key === 'Escape') {
-    
-  // }
+  else if (event.key === 'Escape') {
+    let focusedDiv = document.querySelector(":focus")
+    if (focusedDiv.classList.contains("expanded")) {
+      let content = focusedDiv.firstElementChild
+      let peekContent = focusedDiv.lastElementChild
+      focusedDiv.classList.remove("expanded")
+      content.setAttribute("class", "hide")
+      peekContent.setAttribute("class", "peek-content")
+      expanded = false
+    }
+  }
 
   // Code for toggling the cursor
   if (event.key === 'c' || event.key === 'C') {
