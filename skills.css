@@ -5,3 +5,7 @@
     display: flex;
     width: max-content;
 }
+
+li{
+    font-size: medium;
+}
