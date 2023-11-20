@@ -98,7 +98,7 @@ body{
     border: none;
 }
 
-.container div:hover, .container div:focus{
+.container>div:hover, .container div:focus{
     box-shadow: #34fd02 0 0 10px 5px;
     border: none;
     transform: scale(1.25);

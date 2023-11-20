@@ -12,6 +12,33 @@ setInterval(showHelp, 3000);
 const links = document.getElementsByClassName("arrow-nav")
 let index = 0 
 var expanded = false
+document.addEventListener("click", function(event) {
+  let clickedElement = event.target
+  if (clickedElement.classList.contains("arrow-nav")) {
+    index = Array.from(links).indexOf(clickedElement)
+    links[index].focus()
+  }
+  handleExpand()
+})
+
+function handleExpand() {
+  let focusedDiv = document.querySelector(":focus")
+    let content = focusedDiv.firstElementChild
+    let peekInfo = focusedDiv.lastElementChild
+    if (focusedDiv.classList.contains("expanded")) {
+      focusedDiv.classList.remove("expanded")
+      content.classList.add("hide") 
+      peekInfo.setAttribute("class", "peek-info")
+      expanded = false
+    }
+    else {
+      focusedDiv.classList.add("expanded")
+      content.classList.remove("hide")
+      peekInfo.classList.add("hide")
+      expanded = true
+    } 
+}
+
 document.addEventListener('keydown', function(event) {
   if (!expanded) {
     if (event.key === 'ArrowUp') {
@@ -65,14 +92,17 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'c' || event.key === 'C') {
     console.log('c key pressed');
     let cursorStyle = document.getElementsByTagName("body")[0].style.cursor
-    if (cursorStyle === "none") {
-      document.getElementsByTagName("body")[0].style.cursor = "default"
+    let pointerEvents = document.getElementById("main").style.pointerEvents
+    if (cursorStyle === "none" || cursorStyle === "") {
+      document.getElementsByTagName("body")[0].style.cursor = "auto"
+      document.getElementById("main").style.pointerEvents = "auto"
       for (let i = 0; i < links.length; i++) {
-        links[i].style.cursor = "default"
+        links[i].style.cursor = "auto"
       }
       
     } else {
       document.getElementsByTagName("body")[0].style.cursor = "none"
+      document.getElementById("main").style.pointerEvents = "none"
       for (let i = 0; i < links.length; i++) {
         links[i].style.cursor = "none"
       }
