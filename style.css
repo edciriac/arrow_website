@@ -13,6 +13,7 @@
     border-top: 1.5px solid #33ff00;
     border-left: 0;
     border-right: 0;
+    background-color: black;
     outline: none;
     animation: blink 1s infinite step-end ;
 }

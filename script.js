@@ -30,17 +30,17 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     let focusedDiv = document.querySelector(":focus")
     let content = focusedDiv.firstElementChild
-    let peekContent = focusedDiv.lastElementChild
+    let peekInfo = focusedDiv.lastElementChild
     if (focusedDiv.classList.contains("expanded")) {
       focusedDiv.classList.remove("expanded")
-      content.setAttribute("class", "hide")
-      peekContent.setAttribute("class", "peek-content")
+      content.classList.add("hide") 
+      peekInfo.setAttribute("class", "peek-info")
       expanded = false
     }
     else {
       focusedDiv.classList.add("expanded")
       content.classList.remove("hide")
-      peekContent.classList.add("hide")
+      peekInfo.classList.add("hide")
       expanded = true
     } 
   } 

@@ -5,7 +5,12 @@
     display: flex;
     width: max-content;
 }
-
+.more-info{
+    display: none;
+}
+.expanded{
+    width: auto !important;
+}
 li{
     font-size: medium;
 }
