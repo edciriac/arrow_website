@@ -10,7 +10,7 @@ setInterval(showHelp, 3000);
 
 // Code for using up and down arrow keys to navigate through the links
 const links = document.getElementsByClassName("arrow-nav")
-let index = 0
+let index = 0 
 var expanded = false
 document.addEventListener('keydown', function(event) {
   if (!expanded) {
@@ -26,7 +26,7 @@ document.addEventListener('keydown', function(event) {
     }
   }
 
-  // Code for handling the dialog box
+  // Code for handling the expanded info box
   if (event.key === 'Enter') {
     let focusedDiv = document.querySelector(":focus")
     let content = focusedDiv.firstElementChild
@@ -38,9 +38,9 @@ document.addEventListener('keydown', function(event) {
       expanded = false
     }
     else {
-      focusedDiv.setAttribute("class", "expanded")
-      content.setAttribute("class", "")
-      peekContent.setAttribute("class", "hide")
+      focusedDiv.classList.add("expanded")
+      content.classList.remove("hide")
+      peekContent.classList.add("hide")
       expanded = true
     } 
   } 
