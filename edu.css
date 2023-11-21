@@ -1,0 +1,7 @@
+.expanded{
+    width: 60% !important;
+    height: auto !important;
+}
+.expanded ul {
+    list-style-type: none
+}

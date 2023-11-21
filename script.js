@@ -79,7 +79,6 @@ document.addEventListener('keydown', function(event) {
   
   // Code for toggling the cursor
   if (event.key === 'c' || event.key === 'C') {
-    console.log('c key pressed');
     let cursorStyle = document.getElementsByTagName("body")[0].style.cursor
     let pointerEvents = document.getElementById("main").style.pointerEvents
     if (cursorStyle === "none" || cursorStyle === "") {
