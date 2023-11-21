@@ -1,6 +1,10 @@
 .expanded{
     width: 60% !important;
-    height: auto !important;
+    height: max-content !important;
+    max-height: 75vh;
+    overflow: auto;
+    justify-content: flex-start;
+    padding-right: 1em;
 }
 .expanded ul {
     list-style-type: none;
@@ -10,7 +14,32 @@
 p{
     margin-top: 0.5em;
     margin-bottom: 0.75em;
+    margin-left: -0.5em;
 }
+
+.expanded {
+    --scrollbarBG: black;
+    --thumbBG: #33ff00;
+  }
+  .expanded::-webkit-scrollbar {
+    width: 7px;
+  }
+  .expanded {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  .expanded::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+    border: #33ff00 solid 1px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 4px #000000;  
+  }
+  .expanded::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    /* border: 3px solid var(--scrollbarBG); */
+  }
+
 /* .expanded li:last-of-type {
     margin-bottom: 1em;
 } */
