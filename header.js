@@ -5,7 +5,11 @@ let appHeader = `
 </nav>
 `;
 let appFooter = `
-<footer style="white-space: pre-line">Press 'c' to toggle cursor. \n Press 'Backspace' or 'Left Arrow' to go to previous page.</footer>
+<footer style="white-space: pre-line">
+Press 'c' to toggle cursor.
+Press 'Enter' to expand and minimize info boxes.
+Press 'Backspace' or 'Left Arrow' to go to previous page.
+</footer>
 `;
 
 document.getElementById("app-header").innerHTML = appHeader;
