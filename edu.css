@@ -37,9 +37,4 @@ p{
   .expanded::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG) ;
     border-radius: 6px;
-    /* border: 3px solid var(--scrollbarBG); */
   }
-
-/* .expanded li:last-of-type {
-    margin-bottom: 1em;
-} */

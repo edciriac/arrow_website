@@ -41,6 +41,12 @@ document.addEventListener('keydown', function(event) {
       links[index].focus()  
       isPressed = true
     }
+    // Place focused element on the center of the scroll
+    let focusedElement = document.activeElement;
+    focusedElement.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+  }); 
     // Save the focused index in the main page in session storage
     if (window.location.pathname === "/index.html") {
       sessionStorage.setItem("focusedIndex", index)
