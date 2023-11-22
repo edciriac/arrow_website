@@ -1,4 +1,3 @@
-// Code for using up and down arrow keys to navigate through the links
 const links = document.getElementsByClassName("arrow-nav")
 let index = 0 
 var expanded = false
@@ -29,9 +28,17 @@ function handleExpand() {
     } 
 }
 
-
 document.addEventListener('keydown', function(event) {
+// Code for using up and down arrow keys to navigate through the links
   if (!expanded) {
+    // Use stored index if on the main page
+    if (window.location.pathname === "/index.html") {
+      try {
+        index = parseInt(sessionStorage.getItem("focusedIndex"))
+      } catch (error) {
+        console.log(error)
+      }
+    }
     if (event.key === 'ArrowUp') {
       index = index== 0? links.length-1: index-1
       links[index].focus() 
@@ -41,16 +48,16 @@ document.addEventListener('keydown', function(event) {
       links[index].focus()  
       isPressed = true
     }
+    // Save the focused index in the main page in session storage
+    if (window.location.pathname === "/index.html") {
+      sessionStorage.setItem("focusedIndex", index)
+    }
     // Place focused element on the center of the scroll
     let focusedElement = document.activeElement;
     focusedElement.scrollIntoView({
       behavior: "smooth",
       block: "center",
   }); 
-    // Save the focused index in the main page in session storage
-    if (window.location.pathname === "/index.html") {
-      sessionStorage.setItem("focusedIndex", index)
-    }
   }
 
   // Code for handling the expanded info box
