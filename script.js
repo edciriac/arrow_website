@@ -29,6 +29,7 @@ function handleExpand() {
     } 
 }
 
+
 document.addEventListener('keydown', function(event) {
   if (!expanded) {
     if (event.key === 'ArrowUp') {
@@ -39,6 +40,10 @@ document.addEventListener('keydown', function(event) {
       index = index== links.length-1? 0: index+1
       links[index].focus()  
       isPressed = true
+    }
+    // Save the focused index in the main page in session storage
+    if (window.location.pathname === "/index.html") {
+      sessionStorage.setItem("focusedIndex", index)
     }
   }
 

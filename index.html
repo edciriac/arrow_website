@@ -28,6 +28,11 @@
             }
         }
         setInterval(showHelp, 3000);
+
+        // Focus on the element that was focused before the page was reloaded
+        window.addEventListener("load", (event) => {
+            document.getElementsByClassName("arrow-nav")[sessionStorage.getItem("focusedIndex")].focus()
+        });
     </script>
     <script src="script.js"></script>
     <script src="header.js"></script>
