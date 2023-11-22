@@ -11,7 +11,7 @@
 
 .container {
     justify-content: flex-start;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     --scrollbarBG: black;
     --thumbBG: #33ff00;
