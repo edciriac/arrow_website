@@ -104,6 +104,7 @@ document.addEventListener('keydown', function(event) {
       document.getElementById("main").style.pointerEvents = "auto"
       for (let i = 0; i < links.length; i++) {
         links[i].style.cursor = "auto"
+        document.getElementsByTagName("a")[i].style.cursor = "pointer"
       }
       
     } else {
