@@ -34,9 +34,11 @@ document.addEventListener('keydown', function(event) {
     // Use stored index if on the main page
     if (window.location.pathname === "/index.html") {
       try {
+        sessionStorage.getItem("focusedIndex")
         index = parseInt(sessionStorage.getItem("focusedIndex"))
       } catch (error) {
-        console.log(error)
+        index = 0
+        sessionStorage.setItem("focusedIndex", index)
       }
     }
     if (event.key === 'ArrowUp') {
