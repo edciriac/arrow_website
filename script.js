@@ -32,13 +32,13 @@ document.addEventListener('keydown', function(event) {
 // Code for using up and down arrow keys to navigate through the links
   if (!expanded) {
     // Use stored index if on the main page
-    if (window.location.pathname === "/index.html") {
-      try {
-        sessionStorage.getItem("focusedIndex")
-        index = parseInt(sessionStorage.getItem("focusedIndex"))
-      } catch (error) {
+    let lastOfPath = window.location.pathname.split("/").pop()
+    if (lastOfPath=== "index.html" || lastOfPath === "") {
+      if (sessionStorage.getItem("focusedIndex") === null) {
         index = 0
         sessionStorage.setItem("focusedIndex", index)
+      }else{
+        index = parseInt(sessionStorage.getItem("focusedIndex"))
       }
     }
     if (event.key === 'ArrowUp') {
@@ -51,7 +51,7 @@ document.addEventListener('keydown', function(event) {
       isPressed = true
     }
     // Save the focused index in the main page in session storage
-    if (window.location.pathname === "/index.html") {
+    if (lastOfPath=== "index.html" || lastOfPath === "") {
       sessionStorage.setItem("focusedIndex", index)
     }
     // Place focused element on the center of the scroll
