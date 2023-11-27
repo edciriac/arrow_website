@@ -10,7 +10,6 @@
 }
 
 .container {
-    justify-content: flex-start;
     overflow-y: auto;
     overflow-x: hidden;
     --scrollbarBG: black;
