@@ -101,20 +101,26 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'c' || event.key === 'C') {
     let cursorStyle = document.getElementsByTagName("body")[0].style.cursor
     let pointerEvents = document.getElementById("main").style.pointerEvents
-    if (cursorStyle === "none" || cursorStyle === "") {
+    if (! sessionStorage.getItem("cursor")) {
+      sessionStorage.setItem("cursor", false)
+    }
+    if (sessionStorage.getItem("cursor") == "false") {
       document.getElementsByTagName("body")[0].style.cursor = "auto"
       document.getElementById("main").style.pointerEvents = "auto"
       for (let i = 0; i < links.length; i++) {
         links[i].style.cursor = "auto"
-        document.getElementsByTagName("a")[i].style.cursor = "pointer"
+        if (document.getElementsByTagName("a")[i]) {
+          document.getElementsByTagName("a")[i].style.cursor = "pointer"
+        }
       }
-      
+      sessionStorage.setItem("cursor", true)
     } else {
       document.getElementsByTagName("body")[0].style.cursor = "none"
       document.getElementById("main").style.pointerEvents = "none"
       for (let i = 0; i < links.length; i++) {
         links[i].style.cursor = "none"
       }
+      sessionStorage.setItem("cursor", false)
     }
   }
 
