@@ -8,7 +8,17 @@
     width: 100%;
     text-align: center;
 }
-:focus {
+:focus{
+    border-bottom: 1.5px solid #33ff00;
+    border-top: 1.5px solid #33ff00;
+    border-left: 0;
+    border-right: 0;
+    background-color: black;
+    outline: none;
+    animation: blink 1s infinite step-end ;
+}
+
+.arrow-nav:hover{
     border-bottom: 1.5px solid #33ff00;
     border-top: 1.5px solid #33ff00;
     border-left: 0;
@@ -29,9 +39,23 @@ body{
     animation: fade-in 2s ;
 }
 
+#app-header{
+    position: relative;
+}
+button{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: auto !important;
+    aspect-ratio: 1 ;
+    background:no-repeat left/cover url(Media/icons/arrow-left.svg) ;
+    img{
+        height: 100%;
+    };
+    border: none
+}
 .banner {
     display: flex;
-    height: 2em;
     align-items: center;
     justify-content: space-between;
     font-size: small;
@@ -39,7 +63,7 @@ body{
 }
 .banner img{
     background-color: #33ff00;
-    height: 100%;
+    max-height: 2em;
     width: auto;
     border-radius: 2px;
 }

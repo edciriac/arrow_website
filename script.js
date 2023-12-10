@@ -2,17 +2,20 @@ const links = document.getElementsByClassName("arrow-nav")
 let index = 0 
 var expanded = false
 document.addEventListener("click", function(event) {
-  let clickedElement = event.target
-  if (clickedElement.classList.contains("arrow-nav")) {
-    index = Array.from(links).indexOf(clickedElement)
-    links[index].focus()
-  }
+  // let clickedElement = event.target
+  // if (clickedElement.classList.contains("arrow-nav")) {
+  //   index = Array.from(links).indexOf(clickedElement)
+  //   links[index].focus()
+  // }
   handleExpand()
 })
 
 function handleExpand() {
   let focusedDiv = document.querySelector(":focus")
     let content = focusedDiv.firstElementChild
+    if (!content) {
+      return
+    }
     let peekInfo = focusedDiv.lastElementChild
     if (focusedDiv.classList.contains("expanded")) {
       focusedDiv.classList.remove("expanded")

@@ -2,6 +2,7 @@ let appHeader = `
 <nav class="banner">
 <img src="Media/Logo.png" alt="Logo">
 <p>Eduard Ciriaco</p>
+<button tabindex=0 onclick=window.history.back()></button>
 </nav>
 `;
 let appFooter = `
