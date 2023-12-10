@@ -1,6 +1,21 @@
 const links = document.getElementsByClassName("arrow-nav")
 let index = 0 
 var expanded = false
+
+
+        // Hide cursor on the first time on page
+        if (sessionStorage.getItem("cursor") == null) {
+          document.body.style.cursor = "none";
+          sessionStorage.setItem("cursor", false)
+          document.getElementById("main").style.pointerEvents = "none"
+      } else if (sessionStorage.getItem("cursor") == "true") {
+          document.body.style.cursor = "auto";
+          document.getElementById("main").style.pointerEvents = "auto"
+      } else {
+          document.body.style.cursor = "none";
+          document.getElementById("main").style.pointerEvents = "none"
+      }
+
 document.addEventListener("click", function(event) {
   // let clickedElement = event.target
   // if (clickedElement.classList.contains("arrow-nav")) {

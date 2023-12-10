@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+    
     <div id="main">
         <header id="app-header"></header>
         <div id="content">
@@ -22,10 +24,6 @@
     </div>
     <script>
 
-        // Hide cursor
-        document.body.style.cursor = "none";
-        sessionStorage.setItem("cursor", false)
-        document.getElementById("main").style.pointerEvents = "none"
 
         // Show tooltip if user doesn't press on arrow keys for 4 seconds
         let isPressed = false
@@ -48,6 +46,11 @@
     </script>
     <script src="script.js"></script>
     <script src="header.js"></script>
+    <style>
+        .banner button{
+            display: none;
+        }
+    </style>
 </body>
 
 </html>
