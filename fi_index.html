@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eduard Ciriaco Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    
+    <div id="main">
+        <header id="app-header"></header>
+        <div id="content">
+            <div><a class="arrow-nav" href="experience.html" autofocus>experience</a></div>
+            <div><a class="arrow-nav" href="education.html">education</a></div>
+            <div><a class="arrow-nav" href="skills.html">skills</a></div>
+            <!-- <div><a href="toolkit.html">toolkit</a></div> -->
+            <div class="help">Use 'up' and 'down' arrow keys to navigate and 'enter' to see the page.</div>
+        </div>
+        <footer id="app-footer"></footer>
+
+    </div>
+    <script>
+
+
+        // Show tooltip if user doesn't press on arrow keys for 4 seconds
+        let isPressed = false
+        const showHelp = () => {
+            if (!isPressed) {
+                document.getElementsByClassName("help")[0].style.animation = "show 5s"
+            }
+        }
+        setInterval(showHelp, 3000);
+
+        // Focus on the element that was focused before the page was reloaded
+        window.addEventListener("load", (event) => {
+            try {
+                document.getElementsByClassName("arrow-nav")[sessionStorage.getItem("focusedIndex")].focus()
+            } catch (error) {
+                console.log("sessionStorage doesn't have the focusedIndex key")
+            }
+            
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <style>
+        .banner button{
+            display: none;
+        }
+    </style>
+</body>
+
+</html>
